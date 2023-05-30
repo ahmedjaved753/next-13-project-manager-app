@@ -1,11 +1,6 @@
 import { NextResponse } from "next/server";
 
-export function POST() {
-  console.log("aaja");
-
+export async function POST(req: Request) {
+  const body = await req.json();
   return NextResponse.json({ data: "hi data" }, { status: 200 });
-}
-
-export function GET() {
-  return NextResponse.json({ data: "hi data get" }, { status: 200 });
 }
